@@ -2,6 +2,8 @@ package com.example.to_do_app
 
 import android.content.ContentValues
 import android.content.Context
+import android.content.LocusId
+import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
@@ -71,6 +73,30 @@ class TasksDatabaseHelper(context: Context) :SQLiteOpenHelper(context, DATABASE_
         db.update(TABLE_NAME, values, whereClause, whereArgs)
         db.close()
     }
+
+    fun getTaskByID(taskId: Int) : Task {
+        val db = readableDatabase
+        val query = "SELECT * FROM $TABLE_NAME WHERE $COLUMN_ID =$taskId"
+        val cursor = db.rawQuery(query, null)
+        cursor.moveToFirst()
+
+        val  id = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_ID))
+        val  title = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_TITLE))
+        val  content = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_CONTENT))
+
+        cursor.close()
+        db.close()
+        return Task(id, title, content)
+    }
+
+    fun  deleteTask(taskId: Int) {
+        val db = writableDatabase
+        val whereClause = "$COLUMN_ID = ?"
+        val whereArgs = arrayOf(taskId.toString())
+        db.delete(TABLE_NAME, whereClause, whereArgs)
+        db.close()
+    }
+
 
 
 }
