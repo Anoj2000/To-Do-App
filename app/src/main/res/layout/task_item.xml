@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardCornerRadius="8dp"
+    android:backgroundTint="@color/lightPurple"
     app:cardElevation="4dp"
     app:cardUseCompatPadding="true" >
 
@@ -24,9 +25,9 @@
                 android:id="@+id/titleTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tittle"
+                android:text="Title"
                 android:fontFamily="@font/poppins"
-                android:textColor="@color/Purple"
+                android:textColor="@color/cream"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -45,7 +46,6 @@
                 android:layout_alignParentEnd="true"
                 android:src="@drawable/delete_button" />
 
-
         </RelativeLayout>
 
         <TextView
@@ -54,9 +54,18 @@
             android:layout_height="wrap_content"
             android:text="Content"
             android:fontFamily="@font/poppins"
+            android:textColor="@color/black"
             android:maxLines="3"
             android:layout_marginTop="4dp" />
 
+        <TextView
+            android:id="@+id/dateTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/black"
+            android:layout_marginTop="8dp" />
 
     </LinearLayout>
 

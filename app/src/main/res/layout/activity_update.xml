@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:padding="16dp"
     tools:context=".UpdateTaskActivity">
 
@@ -13,6 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
         android:text="Edit Task"
         android:textColor="@color/Purple"
@@ -23,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/editTaskHeading"
+        android:layout_alignTop="@id/editTaskHeading"
         android:layout_marginEnd="6dp"
         android:src="@drawable/done_button" />
 
@@ -31,11 +33,14 @@
         android:id="@+id/updateTaskEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editTaskHeading"
+        android:layout_below="@id/editTaskHeading"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
         android:background="@drawable/purple_border"
         android:fontFamily="@font/poppins"
         android:hint="Enter the Task"
+        android:textColor="@color/black"
         android:maxLines="1"
         android:padding="12dp"
         android:textSize="20sp" />
@@ -44,13 +49,25 @@
         android:id="@+id/updateContentEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/updateTaskEditText"
+        android:layout_below="@id/updateTaskEditText"
         android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
         android:background="@drawable/purple_border"
         android:fontFamily="@font/poppins"
         android:gravity="top"
         android:hint="Enter the description"
-        android:padding="80dp"
+        android:textColor="@color/black"
+        android:padding="12dp"
         android:textSize="18sp" />
+
+    <DatePicker
+        android:id="@+id/datePicker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/updateContentEditText"
+        android:layout_marginTop="30dp"
+        android:calendarTextColor="@color/black"
+        android:background="@color/lightPurple" />
 
 </RelativeLayout>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:padding="16dp"
     tools:context=".AddTaskActivity">
 
@@ -36,9 +36,11 @@
         android:background="@drawable/purple_border"
         android:fontFamily="@font/poppins"
         android:hint="Enter the Task"
+        android:textColor="@color/black"
         android:maxLines="1"
         android:padding="12dp"
         android:textSize="20sp" />
+
 
     <EditText
         android:id="@+id/contentEditText"
@@ -50,7 +52,17 @@
         android:fontFamily="@font/poppins"
         android:gravity="top"
         android:hint="Enter the description"
-        android:padding="80dp"
+        android:textColor="@color/black"
+        android:padding="12dp"
         android:textSize="18sp" />
+
+    <DatePicker
+        android:id="@+id/datePicker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/lightPurple"
+        android:calendarTextColor="@color/black"
+        android:layout_below="@id/contentEditText"
+        android:layout_marginTop="16dp"/>
 
 </RelativeLayout>

@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         db = TasksDatabaseHelper(this)
-        tasksAdapter = TasksAdapter(db.getAllTasks(), this)
+        tasksAdapter = TasksAdapter(db.getAllTasks(), this, db)
 
         binding.TasksRecyclerView.layoutManager = LinearLayoutManager(this)
         binding.TasksRecyclerView.adapter = tasksAdapter
